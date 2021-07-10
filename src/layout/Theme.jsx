@@ -9,10 +9,19 @@ export const theme = createTheme({
       fontFamily: 'IRYekan,sans-serif'
       
     },
-    
+
     
   });
-  
+  theme.typography.h3 = {
+    fontSize: '1.2rem',
+    '@media (min-width:600px)': {
+      fontSize: '0.9rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.2rem',
+      fontWeight: 'lighter'
+    },
+  };
 
 function Theme({children}) {
     return (
