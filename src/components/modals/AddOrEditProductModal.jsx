@@ -25,6 +25,9 @@ import { setLoading } from "../../store/actions/LoadingActions";
 import { toast } from "react-toastify";
 
 const useStyles = makeStyles((theme) => ({
+  form: {
+    transform: "translate(0px, -28px)",
+  },
   modal: {
     display: "flex",
     alignItems: "center",
@@ -174,7 +177,7 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
         className={classes.closeBtn}
         onClick={onClose}
       />
-      <form className={classes.root} onSubmit={handleOnSubmit}>
+      <form className={classes.form} onSubmit={handleOnSubmit}>
         <Grid container direction="column" spacing={3}>
           <Grid item lg={12}>
             <TextField
