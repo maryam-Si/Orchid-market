@@ -18,6 +18,7 @@ export const styles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center",
   },
   avatar: {
     margin: theme.spacing(1),
