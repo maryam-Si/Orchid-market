@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Button,
@@ -7,13 +7,11 @@ import {
   Grid,
   InputLabel,
   MenuItem,
-  FormHelperText,
-  FormControl,
   Select,
 } from "@material-ui/core";
 import MUIRichTextEditor from "mui-rte";
 import CancelIcon from "@material-ui/icons/Cancel";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setProduct,
   getAllProducts,
@@ -48,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
     top: "2px",
     right: "2px",
   },
-  title: {},
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
@@ -68,6 +65,76 @@ const useStyles = makeStyles((theme) => ({
     height: `${100}px`,
     objectFit: "cover",
     objectPosition: "top",
+  },
+  [theme.breakpoints.down("xl")]: {
+    saveBtn: {
+      transform: "translate(0px,120px)",
+    },
+  },
+  [theme.breakpoints.down("lg")]: {
+    saveBtn: {
+      transform: "translate(0px,200px)",
+    },
+    form: {
+      transform: "translate(0px, -4px)",
+    },
+    img: {
+      width: `${120}px`,
+      height: `${120}px`,
+    },
+    formTitle: {
+      fontSize: "1.5rem",
+      transform: "translate(0px, -10px)",
+    },
+  },
+  [theme.breakpoints.down("md")]: {
+    saveBtn: {
+      transform: "translate(0px,-42px)",
+    },
+    form: {
+      transform: "translate(0px, -9px)",
+    },
+    img: {
+      width: `${100}px`,
+      height: `${100}px`,
+    },
+    formTitle: {
+      fontSize: "1rem",
+      transform: "translate(0px, -10px)",
+    },
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    form: {
+      transform: "translate(0px, -68px)",
+    },
+
+    img: {
+      width: `${54}px`,
+      height: `${54}px`,
+    },
+    formTitle: {
+      fontSize: "0.9rem",
+      transform: "translate(0px, -23px)",
+    },
+    saveBtn: {
+      transform: "translate(0px,-55px)",
+    },
+    h6: {
+      fontSize: "1rem",
+    },
+    overrides: {
+      MuiGrid: {
+        item: {
+          padding: "0px",
+        },
+        MuiInputBase: {
+          input: {
+            fontSize: "0.7rem",
+          },
+        },
+      },
+    },
   },
 }));
 
@@ -116,8 +183,6 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
     if ((name, brand, image, category, description)) {
       if (selectedProduct) {
         console.log(selectedProduct);
-
-        const editedProduct = {};
         dispatch(removeSelectedProduct());
         dispatch(
           editAProductById(selectedProduct.id, {
@@ -171,7 +236,9 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
   //////////////////////////////////////////////////////
   return (
     <div className={classes.paper}>
-      <h2 id="transition-modal-title">{title} </h2>
+      <h2 id="transition-modal-title" className={classes.formTitle}>
+        {title}{" "}
+      </h2>
       <CancelIcon
         color="error"
         className={classes.closeBtn}
@@ -256,6 +323,7 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
           <Grid item lg={12} className={classes.textEditor}>
             <MUIRichTextEditor
               label="لطفا فیلد را پر کنید"
+              toolbarButtonSize="small"
               onChange={(state) => {
                 setDescription(state.getCurrentContent().getPlainText());
               }}

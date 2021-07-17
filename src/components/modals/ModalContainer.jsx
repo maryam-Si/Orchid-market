@@ -16,6 +16,11 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  [theme.breakpoints.down("xl")]: {
+    button: {
+      padding: "6px 62px",
+    },
+  },
 }));
 
 export default function ModalContainer({ open, children, onClose }) {
