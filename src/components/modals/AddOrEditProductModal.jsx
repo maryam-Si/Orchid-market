@@ -157,6 +157,19 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
   );
   const dispatch = useDispatch();
   //////////////////////////////////////
+  const def = `{"blocks":[{"key":"b76h6","text":"${
+    description ? description : ""
+  }","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":0,"length":500,"style":""}],"entityRanges":[],"data":{}}],"entityMap":{}}`;
+  const customControl = [
+    {
+      name: "my-style",
+      type: "inline",
+      inlineStyle: {
+        backgroundColor: "black",
+        color: "red",
+      },
+    },
+  ];
 
   ///////////////////////////////////////////////////
   /**convert image to base4 */
@@ -323,7 +336,9 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
           <Grid item lg={12} className={classes.textEditor}>
             <MUIRichTextEditor
               label="لطفا فیلد را پر کنید"
-              toolbarButtonSize="small"
+              defaultValue={def}
+              customControls={customControl}
+              inlineToolbar={true}
               onChange={(state) => {
                 setDescription(state.getCurrentContent().getPlainText());
               }}
