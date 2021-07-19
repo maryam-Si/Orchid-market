@@ -140,7 +140,6 @@ function NavBar() {
           <Typography
             variant="h5"
             color="secondary"
-            component={Link}
             className={classes.returnBtn}
             onClick={logout}
           >

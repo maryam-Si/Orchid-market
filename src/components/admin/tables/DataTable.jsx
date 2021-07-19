@@ -11,17 +11,17 @@ import TablePagination from "@material-ui/core/TablePagination";
 import {
   getAllProducts,
   selectAProduct,
-} from "../../store/actions/productActions";
-import ModalContainer from "../modals/ModalContainer";
-import AddOrEditProductModal from "../modals/AddOrEditProductModal";
-import { deleteProduct } from "../../api/products";
+} from "../../../store/actions/productActions";
+import ModalContainer from "../../modals/ModalContainer";
+import AddOrEditProductModal from "../../modals/AddOrEditProductModal";
+import { deleteProduct } from "../../../api/products";
 
 /**import icons */
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@material-ui/core";
-import { setLoading } from "../../store/actions/LoadingActions";
+import { setLoading } from "../../../store/actions/LoadingActions";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core";
-import DataTable from "../../../components/admin/DataTable";
+import DataTable from "../../../components/admin/tables/DataTable";
 import Header from "../../../components/admin/Header";
 import { getAllProducts } from "../../../store/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
