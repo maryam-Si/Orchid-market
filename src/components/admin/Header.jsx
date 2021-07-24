@@ -27,7 +27,7 @@ const Header = ({
         alignItems="center"
         className={classes.container}
       >
-        <Grid item md={3}>
+        <Grid item>
           <Typography variant="h3" component="h3">
             {title}
           </Typography>
