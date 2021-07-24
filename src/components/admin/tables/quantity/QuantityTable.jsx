@@ -164,13 +164,13 @@ export default function QuantityTable({ headers, data }) {
                   >
                     {!editedRows[row.id]?.editablePrice ? (
                       <Typography>
-                        {(+row.price).toLocaleString() || 0}
+                        {(+row.price).toLocaleString("fa-IR") || 0}
                       </Typography>
                     ) : (
                       <TextField
                         classes={{ input: classes.input }}
                         type="text"
-                        defaultValue={(+row.price).toLocaleString() || 0}
+                        defaultValue={(+row.price).toLocaleString("fa-IR") || 0}
                         autoFocus
                         onKeyUp={(e) => undo(e, "price", row)}
                         onBlur={(e) => changeToText(e, row.id, "price")}
@@ -182,13 +182,13 @@ export default function QuantityTable({ headers, data }) {
                   >
                     {!editedRows[row.id]?.editableStock ? (
                       <Typography>
-                        {(+row.stock).toLocaleString() || 0}
+                        {(+row.stock).toLocaleString("fa-IR") || 0}
                       </Typography>
                     ) : (
                       <TextField
                         classes={{ input: classes.input }}
                         type="text"
-                        defaultValue={(+row.stock).toLocaleString() || 0}
+                        defaultValue={(+row.stock).toLocaleString("fa-IR") || 0}
                         onKeyUp={(e) => undo(e, "stock", row)}
                         onBlur={(e) => changeToText(e, row.id, "stock")}
                         autoFocus

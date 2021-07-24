@@ -52,7 +52,30 @@ theme.typography.h5 = {
   },
   [theme.breakpoints.down("xs")]: {
     fontSize: "0.5rem",
-    fontWeight: "bold",
+    fontWeight: "lighter",
+  },
+};
+
+theme.typography.h6 = {
+  [theme.breakpoints.down("xl")]: {
+    fontSize: "1rem",
+    fontWeight: "lighter",
+  },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "1.2rem",
+    fontWeight: "lighter",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1rem",
+    fontWeight: "lighter",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.9rem",
+    fontWeight: "lighter",
+  },
+  [theme.breakpoints.down("xs")]: {
+    fontSize: "0.7rem",
+    fontWeight: "lighter",
   },
 };
 
