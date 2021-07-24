@@ -9,11 +9,26 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import NotFound from "./pages/NotFound";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import Container from "./components/store/container/Container";
+import HomePage from "./pages/store/HomePage";
+import BasketPage from "./pages/store/BasketPage";
 
 function App() {
   return (
     <div className="App">
       <Switch>
+        <Route path="/" exact>
+          <Container>
+            <HomePage />
+          </Container>
+        </Route>
+
+        <Route path="/cart" exact>
+          <Container>
+            <BasketPage />
+          </Container>
+        </Route>
+
         <Route path="/admin/login" exact component={LoginAdmin} />
 
         <ProtectedRoute path="/admin/panel-products" exact>
