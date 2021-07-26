@@ -22,7 +22,7 @@ import EventNote from "@material-ui/icons/EventNote";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 import { useTheme } from "@material-ui/core/styles";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useStyles } from "./styles";
 import { logout } from "../../../utils/auth";
 
@@ -65,12 +65,6 @@ function NavBar() {
     </div>
   );
 
-  const history = useHistory();
-  /**logout */
-  function logoutAdmin() {
-    logout();
-    history.push("/admin/login");
-  }
   return (
     <div>
       <AppBar className={classes.appBar}>

@@ -60,13 +60,6 @@ export const changeTextToInput = (id, updateRow) => {
   };
 };
 
-export const changingValue = (id, changedRow) => {
-  return {
-    type: CHANGE_VALUE,
-    payload: { id, changedRow },
-  };
-};
-
 export const changeCellToText = (id, updateRow) => {
   return {
     type: CHANGE_TO_TEXT,

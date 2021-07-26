@@ -1,24 +1,34 @@
 import { makeStyles, Typography, Grid, Button } from "@material-ui/core";
-import React from "react";
+import React, { useEffect } from "react";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
 const Header = ({
   title,
   btnText,
   handelClick,
   isOrderHeader,
   recivingStatus,
+  disableButton,
 }) => {
   const useStyle = makeStyles({});
   const classes = useStyle();
   const [value, setValue] = React.useState("");
+  const [flag, setFlag] = React.useState(false);
+
   const handleChange = (event) => {
     setValue(event.target.value);
     recivingStatus(event.target.value);
   };
+  useEffect(() => {
+    if (btnText === "ذخیره" && !disableButton) {
+      setFlag(true);
+    } else {
+      setFlag(false);
+    }
+  }, [disableButton]);
+
   return (
     <>
       <Grid
@@ -76,7 +86,12 @@ const Header = ({
             justifyContent="flex-end"
             className={classes.textParent}
           >
-            <Button variant="contained" color="primary" onClick={handelClick}>
+            <Button
+              variant="contained"
+              color="primary"
+              disabled={flag}
+              onClick={handelClick}
+            >
               {btnText}
             </Button>
           </Grid>

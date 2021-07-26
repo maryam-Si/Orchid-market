@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -83,14 +83,7 @@ export default function QuantityTable({ headers, data }) {
       dispatch(addRow(id, newCell));
     }
   };
-  ///////////////////////////////////////////////////////////////////////////////////
-  /** Change the value of the cells */
-  function changeValueOfCell(e, type, id) {
-    let editedValue = e.target.value;
-    let newRow = { ...editedRows[id], [type]: editedValue };
 
-    dispatch(changingValue(id, newRow));
-  }
   ///////////////////////////////////////////////////////////////////////////////////////////
   /** back to previous value of price or stock  */
   function undo(e, type, product) {

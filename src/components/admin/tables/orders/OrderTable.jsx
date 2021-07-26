@@ -10,8 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import TablePagination from "@material-ui/core/TablePagination";
 import ModalContainer from "../../../modals/ModalContainer";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Typography } from "@material-ui/core";
-import { setLoading } from "../../../../store/actions/LoadingActions";
+import { Button } from "@material-ui/core";
 import { setAOrder } from "../../../../store/actions/orderAction";
 
 import OrderModal from "../../../modals/order/OrderModal";

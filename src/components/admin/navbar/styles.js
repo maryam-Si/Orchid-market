@@ -39,6 +39,7 @@ export const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     display: "flex",
     alignItems: "center",
+    cursor: "pointer",
   },
   [theme.breakpoints.down("xl")]: {
     button: {

@@ -36,7 +36,7 @@ const PanelQuantity = (props) => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.allProducts.products);
   const rows = useSelector((state) => state.allProducts.editableRows);
-
+  const [flag, setFlag] = useState(false);
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
@@ -54,7 +54,28 @@ const PanelQuantity = (props) => {
       );
     }
   }, [products]);
-  console.log(rows);
+  console.log(`edited rows :${JSON.stringify(rows)}`);
+  /**
+   * checking the rows if there is any changes
+   */
+
+  useEffect(() => {
+    if (rows) {
+      let myRows = Object.values(rows);
+      console.log(myRows);
+      if (
+        myRows.some(
+          (row) => row.editablePrice === true || row.editableStock === true
+        )
+      ) {
+        setFlag(true);
+      } else {
+        setFlag(false);
+      }
+    }
+  }, [rows]);
+  console.log(`flag is :${flag}`);
+
   /** send edited product to db */
   const applyChanges = () => {
     let changedProducts = [];
@@ -90,8 +111,9 @@ const PanelQuantity = (props) => {
       <div className={classes.root}>
         <Header
           title="مدیریت موجودی و قیمت ها"
-          btnText=" ذخیره"
+          btnText="ذخیره"
           handelClick={applyChanges}
+          disableButton={flag}
         />
         <div className={classes.table}>
           <QuantityTable
