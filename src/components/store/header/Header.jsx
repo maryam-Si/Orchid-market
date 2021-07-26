@@ -10,7 +10,7 @@ import {
   Box,
   Grid,
 } from "@material-ui/core";
-
+import { isLoggedIn } from "../../../utils/auth";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -60,8 +60,13 @@ function NavBar() {
   );
 
   const history = useHistory();
-  /**logout */
-
+  function handleAdminPage() {
+    if (isLoggedIn) {
+      history.push("/admin/panel-products");
+    } else {
+      history.push("/admin/login");
+    }
+  }
   return (
     <div>
       <AppBar className={classes.appBar}>
@@ -100,8 +105,7 @@ function NavBar() {
               >
                 <Grid item container alignItems="center" lg={4}>
                   <Typography
-                    component={Link}
-                    to="/admin/login"
+                    onClick={handleAdminPage}
                     color="secondary"
                     className={classes.navbar}
                   >
