@@ -331,6 +331,7 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
               <MenuItem value={"مردانه"}>مردانه</MenuItem>
               <MenuItem value={"بچگانه"}>بچگانه</MenuItem>
               <MenuItem value={"ورزشی"}>ورزشی</MenuItem>
+              <MenuItem value={"سلامت و زیبایی"}>سلامت و زیبایی</MenuItem>
             </Select>
           </Grid>
           <Grid item lg={12} className={classes.textEditor}>
