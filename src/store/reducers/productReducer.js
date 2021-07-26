@@ -79,7 +79,6 @@ export default (state = initialState, { type, payload }) => {
 
     case DELETE_FROM_LIST:
       delete state.editableRows[payload];
-      console.log(`nnnnnn${JSON.stringify(state.editableRows)}`);
       return state;
     case EMPTY_LIST:
       return {
