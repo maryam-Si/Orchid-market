@@ -11,6 +11,8 @@ import {
 } from "@material-ui/core";
 import MUIRichTextEditor from "mui-rte";
 import CancelIcon from "@material-ui/icons/Cancel";
+import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+
 import { useDispatch } from "react-redux";
 import {
   setProduct,
@@ -57,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     overflowX: "hidden",
     overflowY: "scroll",
-    height: "222px",
+    height: "180px",
   },
 
   img: {
@@ -66,48 +68,28 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "cover",
     objectPosition: "top",
   },
-  [theme.breakpoints.down("xl")]: {
-    saveBtn: {
-      transform: "translate(0px,120px)",
-    },
-  },
+  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
-    saveBtn: {
-      transform: "translate(0px,200px)",
-    },
-    form: {
-      transform: "translate(0px, -4px)",
-    },
     img: {
       width: `${120}px`,
       height: `${120}px`,
     },
     formTitle: {
       fontSize: "1.5rem",
-      transform: "translate(0px, -10px)",
     },
   },
   [theme.breakpoints.down("md")]: {
-    saveBtn: {
-      transform: "translate(0px,-42px)",
-    },
-    form: {
-      transform: "translate(0px, -9px)",
-    },
     img: {
       width: `${100}px`,
       height: `${100}px`,
     },
     formTitle: {
       fontSize: "1rem",
-      transform: "translate(0px, -10px)",
     },
   },
 
   [theme.breakpoints.down("sm")]: {
-    form: {
-      transform: "translate(0px, -68px)",
-    },
+    form: {},
 
     img: {
       width: `${54}px`,
@@ -115,11 +97,8 @@ const useStyles = makeStyles((theme) => ({
     },
     formTitle: {
       fontSize: "0.9rem",
-      transform: "translate(0px, -23px)",
     },
-    saveBtn: {
-      transform: "translate(0px,-55px)",
-    },
+
     h6: {
       fontSize: "1rem",
     },
@@ -258,7 +237,7 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
         onClick={onClose}
       />
       <form className={classes.form} onSubmit={handleOnSubmit}>
-        <Grid container direction="column" spacing={3}>
+        <Grid container spacing={3}>
           <Grid item lg={12}>
             <TextField
               margin="normal"
@@ -335,23 +314,39 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
             </Select>
           </Grid>
           <Grid item lg={12} className={classes.textEditor}>
-            <MUIRichTextEditor
+            {/* <MUIRichTextEditor
+              toolbarButtonSize="small"
               label="لطفا فیلد را پر کنید"
               defaultValue={def}
               customControls={customControl}
               inlineToolbar={true}
+              controls={[
+                "bold",
+                "italic",
+                "underline",
+                "strikethrough",
+                "numberList",
+                "bulletList",
+                "undo",
+                "redo",
+                "image",
+                "quote",
+              ]}
               onChange={(state) => {
                 setDescription(state.getCurrentContent().getPlainText());
               }}
+            /> */}
+
+            <TextareaAutosize
+              maxRows={4}
+              aria-label="maximum height"
+              placeholder="توضیحات"
+              defaultValue={description ? description : ""}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </Grid>
           <Grid item lg={12}>
-            <Button
-              type="submit"
-              variant="contained"
-              className={classes.saveBtn}
-              color="primary"
-            >
+            <Button type="submit" variant="contained" color="primary">
               <Typography variant="h6" className={classes.title}>
                 {btnText}
               </Typography>
