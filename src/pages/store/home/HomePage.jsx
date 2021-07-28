@@ -7,7 +7,6 @@ import Groups from "../../../components/store/groups/Groups";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-
 import { Link } from "react-router-dom";
 function HomePage(props) {
   const classes = useStyles();
@@ -39,7 +38,7 @@ function HomePage(props) {
     <div>
       <Slider />
       <main>
-        <Container className={classes.cardGrid} maxWidth="xl">
+        <Container className={classes.cardGrid} maxWidth="lg">
           <Box component="div" align="right" marginBottom={8}>
             <Typography
               component={Link}
@@ -55,7 +54,7 @@ function HomePage(props) {
           </Box>
           <Groups groupProducts={womenCategory} />
         </Container>
-        <Container className={classes.cardGrid} maxWidth="xl">
+        <Container className={classes.cardGrid} maxWidth="lg">
           <Box component="div" align="right" marginBottom={8}>
             <Typography
               component={Link}
@@ -72,7 +71,7 @@ function HomePage(props) {
           <Groups groupProducts={menCategory} />
         </Container>
 
-        <Container className={classes.cardGrid} maxWidth="xl">
+        <Container className={classes.cardGrid} maxWidth="lg">
           <Box component="div" align="right" marginBottom={8}>
             <Typography
               component={Link}
@@ -89,7 +88,7 @@ function HomePage(props) {
           <Groups groupProducts={kidsCategory} />
         </Container>
 
-        <Container className={classes.cardGrid} maxWidth="xl">
+        <Container className={classes.cardGrid} maxWidth="lg">
           <Box component="div" align="right" marginBottom={8}>
             <Typography
               component={Link}
@@ -106,7 +105,7 @@ function HomePage(props) {
           <Groups groupProducts={sportCategory} />
         </Container>
 
-        <Container className={classes.cardGrid} maxWidth="xl">
+        <Container className={classes.cardGrid} maxWidth="lg">
           <Box component="div" align="right" marginBottom={8}>
             <Typography
               component={Link}
@@ -115,10 +114,9 @@ function HomePage(props) {
               color="textPrimary"
               gutterBottom
               className={classes.groupTitle}
-              to="/category/زیبایی و سلامت
-            "
+              to="/category/سلامت و زیبایی"
             >
-              زیبایی و سلامت
+              سلامت و زیبایی
             </Typography>
           </Box>
           <Groups groupProducts={beautyCategory} />
