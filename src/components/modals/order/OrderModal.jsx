@@ -53,45 +53,65 @@ function OrderModal({ title, btnText, onClose, orderDetail }) {
       <Grid container direction="column" justifyContent="center" spacing={2}>
         <Grid item container justifyContent="space-around">
           <Grid display="inline">
-            <Typography variant="h6">نام مشتری:</Typography>
+            <Typography variant="h6" component={"span"}>
+              نام مشتری:
+            </Typography>
           </Grid>
           <Grid display="inline">
-            <Typography variant="h6">{orderDetail?.customerName}</Typography>
+            <Typography variant="h6" component={"span"}>
+              {orderDetail?.customerName}
+            </Typography>
           </Grid>
         </Grid>
         <Grid item container justifyContent="space-around">
           <Grid display="inline">
-            <Typography variant="h6">آدرس:</Typography>
+            <Typography variant="h6" component={"span"}>
+              آدرس:
+            </Typography>
           </Grid>
           <Grid display="inline">
-            <Typography variant="h6">{orderDetail?.address}</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid item container justifyContent="space-around">
-          <Grid display="inline">
-            <Typography variant="h6">تلفن:</Typography>
-          </Grid>
-          <Grid display="inline">
-            <Typography variant="h6">{orderDetail?.telephone}</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid item container justifyContent="space-around">
-          <Grid display="inline">
-            <Typography variant="h6">زمان تحویل:</Typography>
-          </Grid>
-          <Grid display="inline">
-            <Typography variant="h6">{orderDetail?.deliveryTime}</Typography>
+            <Typography variant="h6" component={"span"}>
+              {orderDetail?.address}
+            </Typography>
           </Grid>
         </Grid>
 
         <Grid item container justifyContent="space-around">
           <Grid display="inline">
-            <Typography variant="h6">زمان سفارش:</Typography>
+            <Typography variant="h6" component={"span"}>
+              تلفن:
+            </Typography>
           </Grid>
           <Grid display="inline">
-            <Typography variant="h6">{orderDetail?.orderTime}</Typography>
+            <Typography variant="h6" component={"span"}>
+              {orderDetail?.telephone}
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid item container justifyContent="space-around">
+          <Grid display="inline">
+            <Typography variant="h6" component={"span"}>
+              زمان تحویل:
+            </Typography>
+          </Grid>
+          <Grid display="inline">
+            <Typography variant="h6" component={"span"}>
+              {orderDetail?.deliveryTime}
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid item container justifyContent="space-around">
+          <Grid display="inline">
+            <Typography variant="h6" component={"span"}>
+              زمان سفارش:
+            </Typography>
+          </Grid>
+          <Grid display="inline">
+            <Typography variant="h6" component={"span"}>
+              {orderDetail?.orderTime}
+            </Typography>
           </Grid>
         </Grid>
         <Grid item container lg={12} className={classes.table}>

@@ -68,11 +68,11 @@ function NavBar() {
     }
   }
   return (
-    <div>
+    <div className={classes.root}>
       <AppBar className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Grid container justifyContent="space-between" alignItems="center">
-            <Grid item lg={2}>
+            <Grid item>
               <img src={Logo} alt="logo" className={classes.logo} />
             </Grid>
             {isMobile ? (
@@ -100,7 +100,9 @@ function NavBar() {
                 item
                 container
                 justifyContent="flex-end"
-                lg={2}
+                lg={3}
+                md={3}
+                xl={2}
                 className={classes.links}
               >
                 <Grid item container alignItems="center" lg={4}>

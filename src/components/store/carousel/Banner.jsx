@@ -35,7 +35,7 @@ export default function Banner(props) {
     const item = props.item.Items[i];
 
     const media = (
-      <Grid item xs={12 / totalItems} key={item.Name}>
+      <Grid item xs={12 / totalItems} key={item.Image}>
         <CardMedia
           className="Media"
           image={item.Image}

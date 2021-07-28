@@ -267,7 +267,7 @@ function AddOrEditProductModal({ title, btnText, onClose, selectedProduct }) {
             />
           </Grid>
 
-          <Grid container spacing={2} lg={12}>
+          <Grid container item spacing={2} lg={12}>
             <Grid item lg={6}>
               <InputLabel
                 id="demo-simple-select-label"

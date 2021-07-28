@@ -2,13 +2,22 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
   root: {
-    "& .MuiPaper-root": {},
+    "& .MuiGrid-container": {
+      flexWrap: "nowrap",
+    },
+    "& .MuiPaper-root MuiDrawer-paper .MuiDrawer-paperAnchorRight .MuiDrawer-paperAnchorDockedRight .MuiPaper-elevation0":
+      {
+        zIndex: 1,
+        padding: theme.spacing(2),
+        marginTop: theme.spacing(3),
+      },
   },
   logo: {},
   toolbar: {
     justifyContent: "space-between",
     position: "relative",
     alignItems: "center",
+    display: "flex",
   },
   menuButton: {
     position: "absolute",

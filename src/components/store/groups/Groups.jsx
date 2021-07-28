@@ -5,13 +5,13 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-
+import { Link, useHistory } from "react-router-dom";
 function Groups({ groupProducts }) {
   const classes = useStyles();
   return (
-    <Grid container spacing={4}>
-      {groupProducts.slice(0, 3).map((item) => (
-        <Grid item key={item} xs={12} sm={6} md={4}>
+    <Grid container spacing={10}>
+      {groupProducts.slice(0, 3).map((item, index) => (
+        <Grid item key={index} xs={12} sm={6} md={4} lg={4} xl={4}>
           <Card className={classes.card}>
             <CardMedia
               className={classes.cardMedia}
@@ -19,9 +19,11 @@ function Groups({ groupProducts }) {
               title={item.name}
             />
             <CardContent className={classes.cardContent}>
-              <Typography gutterBottom component="h2">
-                {item.name}
-              </Typography>
+              <Link to={`/category/${item.category}/${item.name}/${item.id}`}>
+                <Typography gutterBottom component={"h2"}>
+                  {item.name}
+                </Typography>
+              </Link>
               <Typography gutterBottom style={{ fontSize: 13 }}>
                 قیمت:{(+item.price).toLocaleString("fa-IR")} تومان
               </Typography>
