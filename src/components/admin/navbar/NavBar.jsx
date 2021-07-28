@@ -69,12 +69,7 @@ function NavBar() {
     <div>
       <AppBar className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <Typography
-            variant="h3"
-            component="p"
-            color="secondary"
-            className={classes.title}
-          >
+          <Typography variant="h3" color="secondary" className={classes.title}>
             پنل مدیریت فروشگاه
           </Typography>
           {isMobile ? (
@@ -101,7 +96,6 @@ function NavBar() {
             <div className={classes.links}>
               <Button
                 className={classes.button}
-                variant="text"
                 component={Link}
                 to="/admin/panel-products"
                 color="default"
@@ -111,7 +105,6 @@ function NavBar() {
               </Button>
               <Button
                 className={classes.button}
-                variant="text"
                 component={Link}
                 to="/admin/panel-quantity"
                 color="default"
@@ -121,7 +114,6 @@ function NavBar() {
               </Button>
               <Button
                 className={classes.button}
-                variant="text"
                 component={Link}
                 to="/admin/panel-orders"
                 color="default"
