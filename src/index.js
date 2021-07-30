@@ -5,6 +5,9 @@ import Rtl from "./layout/Rtl";
 import Theme from "./layout/Theme";
 import { Provider } from "react-redux";
 import store from "./store/configureStore";
+import { saveState } from "./utils/shopingCartInStorage";
+
+/** implement subscription */
 
 ReactDOM.render(
   <React.StrictMode>
