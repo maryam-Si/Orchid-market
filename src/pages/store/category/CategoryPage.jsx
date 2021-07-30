@@ -12,6 +12,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import { Link } from "react-router-dom";
 
 function CategoryPage() {
   const classes = useStyles();
@@ -107,7 +108,7 @@ function CategoryPage() {
                     variant="h5"
                     className={classes.sidbarItem}
                   >
-                    {item.name}{" "}
+                    {item.name}
                   </Typography>
                 ))}
               </Grid>
@@ -146,23 +147,29 @@ function CategoryPage() {
                   {data.map((item, index) => (
                     <Grid item key={index} xs={12} sm={6} md={4} lg={4} xl={4}>
                       <Card className={classes.card}>
-                        <CardMedia
-                          className={classes.cardMedia}
-                          image={item.image}
-                          title={item.name}
-                        />
-                        <CardContent className={classes.cardContent}>
-                          <Typography
-                            gutterBottom
-                            component={"h2"}
-                            className={classes.productName}
-                          >
-                            {item.name}
-                          </Typography>
-                          <Typography gutterBottom style={{ fontSize: 13 }}>
-                            قیمت:{(+item.price).toLocaleString("fa-IR")} تومان
-                          </Typography>
-                        </CardContent>
+                        <Link
+                          to={`/product/${item.id}`}
+                          className={classes.linkStyle}
+                        >
+                          <CardMedia
+                            className={classes.cardMedia}
+                            image={item.image}
+                            title={item.name}
+                          />
+                          <CardContent className={classes.cardContent}>
+                            <Typography
+                              gutterBottom
+                              component={"h2"}
+                              className={classes.productName}
+                            >
+                              {item.name}
+                            </Typography>
+
+                            <Typography gutterBottom style={{ fontSize: 13 }}>
+                              قیمت:{(+item.price).toLocaleString("fa-IR")} تومان
+                            </Typography>
+                          </CardContent>
+                        </Link>
                       </Card>
                     </Grid>
                   ))}

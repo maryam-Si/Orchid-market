@@ -61,4 +61,8 @@ export const useStyles = makeStyles((theme) => ({
   productName: {
     marginBottom: theme.spacing(1),
   },
+  linkStyle: {
+    textDecoration: "none",
+    color: "black",
+  },
 }));
