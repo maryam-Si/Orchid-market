@@ -11,7 +11,7 @@ class Slider extends React.Component {
 
     this.state = {
       autoPlay: true,
-      animation: "slide",
+      animation: "fade",
       indicators: true,
       timeout: 500,
       navButtonsAlwaysVisible: false,
