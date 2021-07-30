@@ -8,8 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Container from "./components/store/container/Container";
 import { BrowserRouter as Router } from "react-router-dom";
-const HomePage = lazy(() => import("./pages/store/home/HomePage"));
-const BasketPage = lazy(() => import("./pages/store/BasketPage"));
+import HomePage from "./pages/store/home/HomePage";
+
+const BasketPage = lazy(() => import("./pages/store/basket/BasketPage"));
 const CategoryPage = lazy(() => import("./pages/store/category/CategoryPage"));
 const ProductDetail = lazy(() =>
   import("./pages/store/productDetail/ProductDetail")
@@ -51,7 +52,7 @@ function App() {
                   <CategoryPage />
                 </Container>
               </Route>
-              <Route path="/category/:categoryName/:product/:id" exact>
+              <Route path="/product/:id" exact>
                 <Container>
                   <ProductDetail />
                 </Container>
