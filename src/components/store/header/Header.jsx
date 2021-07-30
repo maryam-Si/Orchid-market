@@ -5,7 +5,7 @@ import {
   IconButton,
   Typography,
   useMediaQuery,
-  Button,
+  Badge,
   Drawer,
   Box,
   Grid,
@@ -22,14 +22,17 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useTheme } from "@material-ui/core/styles";
 import { Link, useHistory } from "react-router-dom";
 import { useStyles } from "./styles";
-
+import { useSelector } from "react-redux";
 function NavBar() {
   const classes = useStyles();
   const [state, setState] = useState({
     right: false,
   });
+
+  const cart = useSelector((state) => state.cart.shoppingCart);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -53,7 +56,9 @@ function NavBar() {
 
         <ListItem component={Link} to="/admin/panel-quantity">
           <ListItemText primary="سبد خرید" />
-          <ShoppingCartIcon fontSize="small" />
+          <Badge color="secondary" badgeContent={cart.length}>
+            <ShoppingCartIcon />
+          </Badge>
         </ListItem>
       </List>
     </div>
@@ -73,7 +78,9 @@ function NavBar() {
         <Toolbar className={classes.toolbar}>
           <Grid container justifyContent="space-between" alignItems="center">
             <Grid item>
-              <img src={Logo} alt="logo" className={classes.logo} />
+              <Link to="/">
+                <img src={Logo} alt="logo" className={classes.logo} />
+              </Link>
             </Grid>
             {isMobile ? (
               <>
@@ -128,7 +135,9 @@ function NavBar() {
                     to="/cart"
                     className={classes.navbar}
                   >
-                    <ShoppingCartIcon fontSize="small" />
+                    <Badge color="secondary" badgeContent={cart.length}>
+                      <ShoppingCartIcon />
+                    </Badge>
                     <Typography>سبد خرید</Typography>
                   </Typography>
                 </Grid>
