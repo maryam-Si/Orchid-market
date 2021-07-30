@@ -7,7 +7,7 @@
       "category": "زنانه",
       "description": "khkhjkjkhkkkhhhhhhhhhhhhhhhhhhhhhhhhhhkjkhhhhkhkhjhhkhkjjjjjjjjjjjjkkhjhkhjkhkhkjhkhhkkkkkkkkkkkkkkkkkkkkkkkkhkhjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpopppppppppppppppppopopopopopopopppppppppppppopopopoppopopo",
       "id": 1,
-      "stock": "40",
+      "stock": "3",
       "price": "300000"
     },
     {
@@ -17,8 +17,8 @@
       "category": "مردانه",
       "description": "دارای ۳ رنگ",
       "id": 3,
-      "price": "1220000",
-      "stock": "8"
+      "price": "2300000",
+      "stock": "12"
     },
     {
       "name": "تی شرت ورزشی مردانه ادیداس",
@@ -28,7 +28,7 @@
       "description": "تیشرت زرشکی مردانه",
       "id": 4,
       "price": "510000",
-      "stock": "12"
+      "stock": "7"
     },
     {
       "name": "سویی شرت و هودی زنانه ادیداس",
@@ -38,7 +38,7 @@
       "description": "مناسب برای تمام فصول",
       "id": 7,
       "price": "1000000",
-      "stock": "5"
+      "stock": "20"
     },
     {
       "name": "ادوپرفیوم زنانه ورساچه پور فم عود اورینتال",
@@ -48,7 +48,7 @@
       "description": " 100 میل",
       "id": 8,
       "price": "3400000",
-      "stock": "3"
+      "stock": "20"
     },
     {
       "name": "تی شرت شلوارک طرح سگ های نگهبان",
@@ -58,7 +58,7 @@
       "description": "کتان",
       "id": 9,
       "price": "230000",
-      "stock": "6"
+      "stock": "5"
     },
     {
       "name": "ست تی شرت و شلوار دخترانه لبتو مدل 5123",
