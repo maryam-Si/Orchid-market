@@ -94,16 +94,16 @@ const PanelQuantity = (props) => {
         });
       }
     });
-    Promise.all(changedProducts.map((row) => changeProduct(row.id, row))).then(
-      (res) => {
+    Promise.all(changedProducts.map((row) => changeProduct(row.id, row)))
+      .then((res) => {
         dispatch(setLoading(true));
         setTimeout(() => {
           dispatch(getAllProducts());
           dispatch(makeArrayEmpty());
           dispatch(setLoading(false));
         }, 1000);
-      }
-    );
+      })
+      .catch((e) => console.log(e));
   };
   /** */
   return (
