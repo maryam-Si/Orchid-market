@@ -33,4 +33,8 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  linkStyle: {
+    textDecoration: "none",
+    color: "black",
+  },
 }));
