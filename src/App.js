@@ -28,6 +28,16 @@ const PanelOrders = lazy(() =>
 const PanelQuantity = lazy(() =>
   import("./pages/admin/panel-quantity/PanelQuantity")
 );
+
+const CheckOutPage = lazy(() => import("./pages/store/checkOut/CheckOutPage"));
+const PaymentPage = lazy(() => import("./pages/store/payment/PaymentPage"));
+const SuccessPayment = lazy(() =>
+  import("./pages/store/successPayment/SuccessPayment")
+);
+const FailedPayment = lazy(() =>
+  import("./pages/store/failedPayment/FailedPayment")
+);
+
 function App() {
   return (
     <>
@@ -44,6 +54,30 @@ function App() {
               <Route path="/cart" exact>
                 <Container>
                   <BasketPage />
+                </Container>
+              </Route>
+
+              <Route path="/checkout" exact>
+                <Container>
+                  <CheckOutPage />
+                </Container>
+              </Route>
+
+              <Route path="/payment" exact>
+                <Container>
+                  <PaymentPage />
+                </Container>
+              </Route>
+
+              <Route path="/payment/success/order/:orderId" exact>
+                <Container>
+                  <SuccessPayment />
+                </Container>
+              </Route>
+
+              <Route path="/payment/failure" exact>
+                <Container>
+                  <FailedPayment />
                 </Container>
               </Route>
 
