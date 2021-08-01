@@ -1,5 +1,5 @@
 import { ActionTypes } from "../constants/action-types";
-const { ADD_TO_CART, INCREMENT_CART, DECREMENT_CART, REMOVE_CART } =
+const { ADD_TO_CART, INCREMENT_CART, DECREMENT_CART, REMOVE_CART, MAKE_EMPTY } =
   ActionTypes;
 
 export const addproductToCart = (product) => {
@@ -22,4 +22,9 @@ export const decrementCart = (id) => ({
 export const removeFromCart = (id) => ({
   type: REMOVE_CART,
   payload: id,
+});
+
+export const makeBasketEmpty = () => ({
+  type: MAKE_EMPTY,
+  payload: {},
 });

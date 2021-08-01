@@ -1,7 +1,7 @@
 import { ActionTypes } from "../constants/action-types";
 import { loadState } from "../../utils/shopingCartInStorage";
 const persistedState = loadState("shoppingCart") || [];
-const { ADD_TO_CART, INCREMENT_CART, DECREMENT_CART, REMOVE_CART } =
+const { ADD_TO_CART, INCREMENT_CART, DECREMENT_CART, REMOVE_CART, MAKE_EMPTY } =
   ActionTypes;
 
 const initialState = {
@@ -36,8 +36,8 @@ export default (state = initialState, { type, payload }) => {
         }
         return a;
       });
-
-      return { ...state, shoppingCart: cartItems };
+    case MAKE_EMPTY:
+      return { ...state, shoppingCart: [] };
 
     case INCREMENT_CART:
       cartItems.map((a) => {
