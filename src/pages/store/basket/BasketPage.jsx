@@ -16,13 +16,6 @@ import {
 } from "@material-ui/core";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import DeleteIcon from "@material-ui/icons/Delete";
-import {
-  digitsArToFa,
-  digitsArToEn,
-  digitsEnToFa,
-  digitsFaToEn,
-  digitsEnToAr,
-} from "@persian-tools/persian-tools";
 import { useStyles } from "./style";
 import { useSelector, useDispatch } from "react-redux";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
@@ -111,7 +104,10 @@ function BasketPage() {
                 </Typography>
               </Grid>
               <Grid item xl={6}>
-                <Button className={classes.finalButton}>
+                <Button
+                  className={classes.finalButton}
+                  onClick={() => history.push("/checkout")}
+                >
                   نهایی کردن سبد خرید
                 </Button>
               </Grid>
