@@ -323,100 +323,22 @@
   ],
   "orders": [
     {
-      "id": 1,
-      "customerName": "امیر ضیایی",
-      "address": "تهران-کرج",
-      "telephone": "۰۹۱۷۶۷۴۳۴۴۶",
-      "deliveryTime": "۱۳۹۹/۳/۴",
-      "orderTime": "۱۳۹۹/۳/۵",
+      "customerName": "مریم   صادقی",
+      "address": "کرج",
+      "telephone": "۰۹۱۹۴۶۱۴۶۶۸",
+      "deliveryTime": "۱۴۰۰/۰۵/۱۴",
+      "orderTime": "۱۴۰۰/۵/۱۰",
       "productList": [
         {
-          "id": 1,
-          "name": "شومیز زنانه برشکا",
-          "price": "10000",
-          "number": 2
-        },
-        {
-          "id": 2,
-          "name": "کاپشن مردانه ادیداس",
-          "price": "20000",
-          "number": 1
-        }
-      ],
-      "totalPrice": "40000",
-      "orderStatus": "delivered"
-    },
-    {
-      "id": 2,
-      "customerName": "مریم مهدیون",
-      "address": "زنجان",
-      "telephone": "۰۹۱۲۳۴۳۵۴۳۴",
-      "deliveryTime": "۱۴۰۰/۱۲/۲۰",
-      "orderTime": "۱۴۰۰/۱۲/۲۶",
-      "productList": [
-        {
-          "id": 3,
-          "name": "تی شرت ورزشی مردانه ادیداس",
-          "price": "340000",
-          "number": 5
-        },
-        {
-          "id": 4,
-          "name": "کاپشن مردانه ادیداس",
-          "price": "2000000",
-          "number": 1
-        }
-      ],
-      "totalPrice": "3700000",
-      "orderStatus": "delivered"
-    },
-    {
-      "id": 3,
-      "customerName": "سارا قاسمی",
-      "address": "تهران",
-      "telephone": "۰۹۱۲۴۳۴۵۶۲۷",
-      "deliveryTime": "۱۴۰۰/۱/۲",
-      "orderTime": "۱۴۰۰/۱/۱۰",
-      "productList": [
-        {
-          "id": 3,
-          "name": "تی شرت ورزشی مردانه ادیداس",
-          "price": "140000",
-          "number": 5
-        },
-        {
-          "id": 4,
+          "id": 7,
           "name": "سویی شرت و هودی زنانه ادیداس",
-          "price": "200000",
+          "price": "1000000",
           "number": 2
         }
       ],
-      "totalPrice": "900000",
-      "orderStatus": "delivered"
-    },
-    {
-      "id": 4,
-      "customerName": "علی کاظمی",
-      "address": "شیراز",
-      "telephone": "۰۹۳۵۴۵۶۷۷۷۸",
-      "deliveryTime": "۱۳۹۹/۶/۶",
-      "orderTime": "۱۳۹۹/۶/۹",
-      "productList": [
-        {
-          "id": 1,
-          "name": "شومیز زنانه برشکا",
-          "price": "3400000",
-          "number": 1
-        },
-        {
-          "id": 4,
-          "name": "کاپشن مردانه ادیداس",
-          "price": "2000000",
-          "number": 1
-        }
-      ],
-      "totalPrice": "2340000",
-      "orderStatus": "delivered"
+      "totalPrice": 2000000,
+      "orderStatus": "delivered",
+      "id": 1
     }
   ]
 }
