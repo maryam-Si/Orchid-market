@@ -26,3 +26,13 @@ export const changeOrder = async (id, order) => {
   });
   return res;
 };
+
+export const addOrder = async (order) => {
+  let res = await axios({
+    method: "post",
+    url: `http://localhost:5000/orders/`,
+    headers: { "content-type": "application/json" },
+    data: JSON.stringify(order),
+  }).catch((err) => console.log(err));
+  return res;
+};
