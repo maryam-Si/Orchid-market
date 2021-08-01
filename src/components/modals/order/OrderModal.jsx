@@ -159,7 +159,7 @@ function OrderModal({ title, btnText, onClose, orderDetail }) {
               <Typography variant="h6">{btnText}</Typography>
             </Button>
           ) : (
-            <Grid container justifyContent="space-around" lg={6}>
+            <Grid item container justifyContent="space-around" lg={6}>
               <Typography variant="h6">زمان تحویل :</Typography>
               <Typography variant="h6">{orderDetail.deliveryTime}</Typography>
             </Grid>

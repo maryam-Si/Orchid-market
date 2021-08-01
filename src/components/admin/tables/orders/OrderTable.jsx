@@ -57,7 +57,7 @@ export default function DataTable({ headers, data, filterMode }) {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const dispatch = useDispatch();
   const [orders, setOrders] = useState(data);
-  const selectedItem = useSelector((state) => state.allOrders.order);
+  const selectedItem = useSelector((state) => state.allOrders.selectedOrder);
 
   /**
    * modal handling
