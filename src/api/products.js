@@ -43,3 +43,30 @@ export const deleteProduct = async (id) => {
     headers: { "content-type": "application/json" },
   }).catch((err) => console.log(err));
 };
+
+export const getCategoryList = async (category) => {
+  let res = await axios({
+    method: "get",
+    url: `http://localhost:5000/products?category=${category}`,
+    headers: { "content-type": "application/json" },
+  }).catch((err) => console.log(err));
+  return res;
+};
+
+export const sortAndPagination = async (category, sort, order, page) => {
+  let res = await axios({
+    method: "get",
+    url: `http://localhost:5000/products?category=${category}&_sort=${sort}&_order=${order}&_page=${page}&_limit=3`,
+    headers: { "content-type": "application/json" },
+  }).catch((err) => console.log(err));
+  return res;
+};
+
+export const searching = async (category, sort, order, page, search) => {
+  let res = await axios({
+    method: "get",
+    url: `http://localhost:5000/products?category=${category}&_sort=${sort}&_order=${order}&_page=${page}&_limit=3&q=${search}`,
+    headers: { "content-type": "application/json" },
+  }).catch((err) => console.log(err));
+  return res;
+};
