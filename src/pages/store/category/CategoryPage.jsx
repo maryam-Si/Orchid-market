@@ -64,16 +64,15 @@ function CategoryPage() {
     getCategoryList(categoryName).then((res) => {
       setListItmes(res.data);
       dispatch(setLoading(false));
-      setpageCount(Math.ceil(listItems.length / 3));
+      setpageCount(Math.ceil(res.data.length / 3));
     });
   }, [categoryName]);
 
   /**pagination */
-  console.log(listItems.length);
+  console.log(`list:${listItems.length}`);
   const changePage = (e) => {
     setPageNumber(e.selected + 1);
   };
-
   console.log(`pageCount : ${pageCount}`);
   console.log(`pageNumber ${pageNumber}`);
 
@@ -110,12 +109,16 @@ function CategoryPage() {
 
   useEffect(() => {
     if (search) {
-      searching(categoryName, sortType, order, pageNumber, search).then((res) =>
-        setListItmes(res.data)
+      searching(categoryName, sortType, order, pageNumber, search).then(
+        (res) => {
+          setListItmes(res.data);
+        }
       );
     } else {
-      sortAndPagination(categoryName, sortType, order, pageNumber).then((res) =>
-        setListItmes(res.data)
+      sortAndPagination(categoryName, sortType, order, pageNumber).then(
+        (res) => {
+          setListItmes(res.data);
+        }
       );
     }
   }, [categoryName, sortType, order, pageNumber, search]);
