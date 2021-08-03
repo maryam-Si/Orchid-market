@@ -14,6 +14,18 @@ export const useStyles = makeStyles((theme) => ({
       overflowX: "hidden",
       borderLeft: "1px solid rgb(97 91 91 / 12%)",
     },
+    "& .MuiIconButton-root": {
+      "&:hover": {
+        backgroundColor: "rgb(0 0 0 / 0%)",
+      },
+    },
+    "& .MuiPaper-elevation4": {
+      boxShadow:
+        " 0px 8px 18px -11px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 1px 0px rgb(0 0 0 / 12%)",
+    },
+    "& .MuiTypography-body1": {
+      color: "palette.background.default",
+    },
   },
 
   content: {
@@ -64,5 +76,28 @@ export const useStyles = makeStyles((theme) => ({
   linkStyle: {
     textDecoration: "none",
     color: "black",
+  },
+  groupTitle: {
+    padding: theme.spacing(2),
+    textDecoration: "none",
+  },
+  appBar: {
+    marginTop: "128px",
+    backgroundColor: "white",
+    minHeight: "58px",
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+  select: {
+    margin: 0,
+    width: 119,
+  },
+  searchIcon: {
+    color: theme.palette.text.disabled,
   },
 }));
