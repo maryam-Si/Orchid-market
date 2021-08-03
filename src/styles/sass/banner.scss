@@ -20,7 +20,7 @@
       padding: 15px;
 
       background-color: black;
-      color: white;
+      color: $graphite;
       opacity: 0.6;
 
       width: 100%;
@@ -51,7 +51,7 @@
   }
 
   .Content {
-    color: white;
+    color: $graphite;
     background-color: $dark-red;
     height: 100%;
 
@@ -65,11 +65,11 @@
 
     &:hover,
     &:active {
-      background-color: $dark-red-active;
+      background-color: $graphite;
 
       .ViewButton {
         background-color: $almost-white;
-        color: $dark-red;
+        color: $graphite;
       }
     }
 
@@ -86,10 +86,10 @@
 
     .ViewButton {
       margin-top: 40px;
-      color: white;
+      color: $graphite;
 
       font-size: $normal-font-size;
-      border: 3px solid white;
+      border: 3px solid $graphite;
       text-transform: capitalize;
 
       transition: 200ms;

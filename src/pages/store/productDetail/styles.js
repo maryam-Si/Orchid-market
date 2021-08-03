@@ -67,7 +67,6 @@ export const useStyles = makeStyles((theme) => ({
     fontWeight: "lighter",
   },
   Button: {
-    width: "33%",
     borderRadius: "20px",
     backgroundColor: "#5b69b4",
     color: "white",
@@ -76,7 +75,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   redButton: {
     textAlign: "left",
-    width: "33%",
     fontSize: "2.3rem",
     fontWeight: "bold",
     padding: theme.spacing(1),

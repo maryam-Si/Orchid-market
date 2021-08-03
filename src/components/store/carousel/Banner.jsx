@@ -7,8 +7,11 @@ import {
   Grid,
   Button,
 } from "@material-ui/core";
+import { useHistory } from "react-router";
 
 export default function Banner(props) {
+  const history = useHistory();
+
   if (props.newProp) console.log(props.newProp);
   const contentPosition = props.contentPosition
     ? props.contentPosition
@@ -19,12 +22,19 @@ export default function Banner(props) {
   let items = [];
   const content = (
     <Grid item xs={12 / totalItems} key="content">
-      <CardContent className="Content">
+      <CardContent
+        className="Content"
+        style={{ backgroundColor: `${props.item.color}` }}
+      >
         <Typography className="Title">{props.item.Name}</Typography>
 
         <Typography className="Caption">{props.item.Caption}</Typography>
 
-        <Button variant="outlined" className="ViewButton">
+        <Button
+          variant="outlined"
+          className="ViewButton"
+          onClick={() => history.push(`/category/${props.item.category}`)}
+        >
           مشاهده
         </Button>
       </CardContent>

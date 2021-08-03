@@ -163,31 +163,35 @@ function ProductDetail() {
                 direction="row"
                 lg={3}
                 xl={12}
+                xs={12}
               >
-                <TextField
-                  id="standard-number"
-                  label="تعداد"
-                  type="number"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  style={{ width: "20%" }}
-                  autoFocus
-                  value={productNumber}
-                  onChange={(e) => setProductNumber(Number(e.target.value))}
-                />
-                {product.stock > 0 ? (
-                  <Button type="submit" className={classes.Button}>
-                    <AddIcon className={classes.addIcon} />
-                    <Typography className={classes.buttonText}>
-                      افزودن به سبد خرید
+                <Grid item xs={3}>
+                  <TextField
+                    id="standard-number"
+                    label="تعداد"
+                    type="number"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    autoFocus
+                    value={productNumber}
+                    onChange={(e) => setProductNumber(Number(e.target.value))}
+                  />
+                </Grid>
+                <Grid item xs={9}>
+                  {product.stock > 0 ? (
+                    <Button type="submit" className={classes.Button}>
+                      <AddIcon className={classes.addIcon} />
+                      <Typography className={classes.buttonText}>
+                        افزودن به سبد خرید
+                      </Typography>
+                    </Button>
+                  ) : (
+                    <Typography className={classes.redButton}>
+                      موجود نیست
                     </Typography>
-                  </Button>
-                ) : (
-                  <Typography className={classes.redButton}>
-                    موجود نیست
-                  </Typography>
-                )}
+                  )}
+                </Grid>
               </Grid>
             </form>
           </Grid>

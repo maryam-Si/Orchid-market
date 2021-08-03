@@ -20,6 +20,28 @@ export const theme = createTheme({
 });
 theme.typography.h3 = {
   [theme.breakpoints.down("xl")]: {
+    fontSize: "1.5rem",
+    fontWeight: "lighter",
+  },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "2rem",
+    fontWeight: "lighter",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1.5rem",
+    fontWeight: "lighter",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "1.4rem",
+  },
+  [theme.breakpoints.down("xs")]: {
+    fontSize: "1.2rem",
+    fontWeight: "lighter",
+  },
+};
+
+theme.typography.h4 = {
+  [theme.breakpoints.down("xl")]: {
     fontSize: "2.1rem",
     fontWeight: "lighter",
   },
