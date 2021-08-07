@@ -18,6 +18,7 @@ export default function Banner(props) {
     : "left";
   const totalItems = props.length ? props.length : 3;
   const mediaLength = totalItems - 1;
+  //const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   let items = [];
   const content = (
@@ -26,17 +27,24 @@ export default function Banner(props) {
         className="Content"
         style={{ backgroundColor: `${props.item.color}` }}
       >
-        <Typography className="Title">{props.item.Name}</Typography>
-
-        <Typography className="Caption">{props.item.Caption}</Typography>
-
-        <Button
-          variant="outlined"
-          className="ViewButton"
-          onClick={() => history.push(`/category/${props.item.category}`)}
+        <Grid
+          container
+          justifyContent="center"
+          direction="column"
+          alignItems="center"
         >
-          مشاهده
-        </Button>
+          <Typography className="Title">{props.item.Name}</Typography>
+
+          <Typography className="Caption">{props.item.Caption}</Typography>
+
+          <Button
+            variant="outlined"
+            className="ViewButton"
+            onClick={() => history.push(`/category/${props.item.category}`)}
+          >
+            مشاهده
+          </Button>
+        </Grid>
       </CardContent>
     </Grid>
   );

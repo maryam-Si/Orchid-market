@@ -33,8 +33,19 @@ $font: Ubuntu, Helvetica, Arial, sans-serif;
 
 $smaller-font-size: 12px;
 $small-font-size: 15px;
+$smallest-font-size: 9px;
+
 $normal-font-size: 18px;
 $bigger-font-size: 21px;
 $header-font-size: 25px;
 $big-header-font-size: 30px;
 $huge-font-size: 40px;
+
+//media queries
+$breakpoint-tablet: 768px;
+$breakpoint-mobileS: 320px;
+$breakpoint-mobileM: 375px;
+$breakpoint-mobileL: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-laptopL: 1440px;
