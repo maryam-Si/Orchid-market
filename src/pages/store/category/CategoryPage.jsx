@@ -3,9 +3,9 @@ import Drawer from "@material-ui/core/Drawer";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { useStyles } from "./styles";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { searching, sortAndPagination } from "../../../api/products";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import WithLoading from "../../../components/WithLoading";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -13,7 +13,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import ReactPaginate from "react-paginate";
@@ -23,7 +22,6 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 
 import {
   Box,
-  useMediaQuery,
   IconButton,
   Divider,
   AppBar,
@@ -31,7 +29,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { getList, getCategoryList } from "../../../api/products";
+import { getCategoryList } from "../../../api/products";
 import { setLoading } from "../../../store/actions/LoadingActions";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -257,37 +255,48 @@ function CategoryPage() {
                     {categoryName}
                   </Typography>
                 </Box>
-                <Grid container justifyContent="center" spacing={10}>
-                  {listItems.map((item, index) => (
-                    <Grid item key={index} xs={12} sm={6} md={4} lg={4} xl={4}>
-                      <Card className={classes.card}>
-                        <Link
-                          to={`/product/${item.id}`}
-                          className={classes.linkStyle}
-                        >
-                          <CardMedia
-                            className={classes.cardMedia}
-                            image={item.image}
-                            title={item.name}
-                          />
-                          <CardContent className={classes.cardContent}>
-                            <Typography
-                              gutterBottom
-                              component={"h2"}
-                              className={classes.productName}
-                            >
-                              {item.name}
-                            </Typography>
+                <Grid container direction="column" spacing={10}>
+                  <Grid item container justifyContent="center" spacing={10}>
+                    {listItems.map((item, index) => (
+                      <Grid
+                        item
+                        key={index}
+                        xs={12}
+                        sm={6}
+                        md={4}
+                        lg={4}
+                        xl={4}
+                      >
+                        <Card className={classes.card}>
+                          <Link
+                            to={`/product/${item.id}`}
+                            className={classes.linkStyle}
+                          >
+                            <CardMedia
+                              className={classes.cardMedia}
+                              image={item.image}
+                              title={item.name}
+                            />
+                            <CardContent className={classes.cardContent}>
+                              <Typography
+                                gutterBottom
+                                component={"h2"}
+                                className={classes.productName}
+                              >
+                                {item.name}
+                              </Typography>
 
-                            <Typography gutterBottom style={{ fontSize: 13 }}>
-                              قیمت:{(+item.price).toLocaleString("fa-IR")} تومان
-                            </Typography>
-                          </CardContent>
-                        </Link>
-                      </Card>
-                    </Grid>
-                  ))}
-                  <Grid>
+                              <Typography gutterBottom style={{ fontSize: 13 }}>
+                                قیمت:{(+item.price).toLocaleString("fa-IR")}{" "}
+                                تومان
+                              </Typography>
+                            </CardContent>
+                          </Link>
+                        </Card>
+                      </Grid>
+                    ))}
+                  </Grid>
+                  <Grid item container justifyContent="center">
                     <ReactPaginate
                       previousLabel={"قبلی"}
                       nextLabel={"بعدی"}

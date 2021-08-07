@@ -54,7 +54,7 @@ function NavBar() {
           <ListItemText primary="مدیریت" />
         </ListItem>
 
-        <ListItem component={Link} to="/admin/panel-quantity">
+        <ListItem component={Link} to="/cart">
           <ListItemText primary="سبد خرید" />
           <Badge color="secondary" badgeContent={cart.length}>
             <ShoppingCartIcon />

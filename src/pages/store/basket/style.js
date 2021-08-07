@@ -13,6 +13,10 @@ export const useStyles = makeStyles((theme) => ({
         border: "1px solid",
       },
     },
+    "& .MuiTableContainer-root": {
+      width: "100%",
+      overflowX: "scroll",
+    },
   },
   table: {
     minWidth: `700px`,
@@ -45,8 +49,5 @@ export const useStyles = makeStyles((theme) => ({
   },
   table: {
     marginTop: theme.spacing(4),
-  },
-  total: {
-    fontSize: "1.5rem",
   },
 }));

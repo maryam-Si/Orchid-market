@@ -75,7 +75,7 @@ function BasketPage() {
                   {shoppingCart?.map((row, index) => (
                     <StyledTableRow key={index}>
                       <TableCell align="left" component="th" scope="row">
-                        {row.name}
+                        <Typography variant="h6">{row.name}</Typography>
                       </TableCell>
                       <TableCell align="left">{row.price}</TableCell>
                       <TableCell align="left">{row.number}</TableCell>

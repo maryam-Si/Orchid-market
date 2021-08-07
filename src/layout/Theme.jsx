@@ -80,11 +80,11 @@ theme.typography.h5 = {
 
 theme.typography.h6 = {
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
     fontWeight: "lighter",
   },
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.2rem",
+    fontSize: "1rem",
     fontWeight: "lighter",
   },
   [theme.breakpoints.down("md")]: {
